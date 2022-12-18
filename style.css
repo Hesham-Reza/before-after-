@@ -1,0 +1,65 @@
+div{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+p{
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+span[data-tool-tips]{
+    color: aqua;
+    position: relative;
+}
+span[data-tool-tips]::after{
+    content: attr(data-tool-tips);
+    position: absolute;
+    white-space: nowrap;
+    background: rgb(44, 255, 227);
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    bottom: 0%;
+    left: 3rem;
+    color: white;
+    transform: scale(0);
+    transition: transform ease-in-out 150ms ,
+                bottom ease-in-out 150ms;
+}
+span[data-tool-tips]:hover::after{
+    transform: scale(1);
+    bottom: 100%;
+}
+.box{
+    width: 20%;
+    margin: 10rem auto;
+    box-shadow: 0 0 5px .1px grey;
+    position: relative;
+    overflow: hidden;
+
+}
+.box img{
+    width: 100%;
+    object-fit: cover;
+}
+.box::after{
+    content: "hello";
+    position: absolute;
+    background: rgba(100, 148, 237, 0.356);
+    top: 100%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: top ease-in-out 350ms;
+    font-size: 3rem;
+    align-items: center;
+    color: white;
+}
+.box:hover::after{
+    top: 0;
+}
+.box p{
+    font-size: 1.2rem;
+    padding-bottom: 2rem;
+}
